@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пользователей</title>
+</head>
+<body>
+<h1>Список пользователей</h1>
+<table>
+    <thead>
+    <tr>
+        <th>имя</th>
+        <th>фамилия</th>
+        <th>почта</th>
+        <th>Действие</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="users : ${users}">
+        <!--/*@thymesVar id="brand" type="org"*/-->
+        <td th:text="${users.name}"></td>
+        <td th:text="${users.lastname}"></td>
+        <td th:text="${users.mail}"></td>
+        <td><a th:href="@{/edit(mail=${users.mail})}">Изменить</a>     <a th:href="@{/delete(mail=${users.mail})}">Удалить</a></td>
+
+    </tr>
+    </tbody>
+</table>
+
+<a href="/add">Добавить</a>
+</body>
+</html>

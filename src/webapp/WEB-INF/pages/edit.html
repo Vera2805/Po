@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Редактирование пользователя</title>
+</head>
+<body>
+<h1>Редактирование пользователя</h1>
+<form action="/update">
+  <label for="name">Имя</label>
+  <input type="text" name="name" id="name" th:value="${user.name}" />
+  <label for="lastname">Фамилия</label>
+  <input type="text" name="lastname" id="lastname" th:value="${user.lastname}"/>
+  <label for="mail">Почта</label>
+  <input type="text" name="mail" id="mail" th:value="${user.mail}"/>
+  <input type="hidden" name="email" id="email" th:value="${email}"/>
+  <input type="submit" name="submit">
+</form>
+
+</body>
+</html>
